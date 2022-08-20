@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cf.democf.controller.login_controller">
+   <children>
+      <ImageView fx:id="cf_logo" fitHeight="1195.0" fitWidth="1051.0" layoutX="20.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/CF-logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="login_lab" layoutX="1431.0" layoutY="103.0" prefHeight="105.0" prefWidth="237.0" text="Login">
+         <font>
+            <Font name="Arial" size="72.0" />
+         </font>
+      </Label>
+      <Label fx:id="user_lab" layoutX="1090.0" layoutY="327.0" text="Tên đăng nhập">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="user_field" layoutX="1392.0" layoutY="327.0" prefHeight="37.0" prefWidth="298.0" />
+      <Label fx:id="pass_lab" layoutX="1101.0" layoutY="472.0" text="Mật khẩu">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="login_img" fitHeight="41.0" fitWidth="176.0" layoutX="1487.0" layoutY="571.0" onMouseClicked="#login_click" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/CF-login.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="pass_field" layoutX="1392.0" layoutY="467.0" prefHeight="37.0" prefWidth="298.0" />
+   </children>
+</AnchorPane>
