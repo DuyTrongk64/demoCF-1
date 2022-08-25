@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -10,14 +11,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.control.ComboBox?>
 <AnchorPane fx:id="nv_man" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cf.democf.controller.nv_main_controller">
    <children>
       <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" tabClosingPolicy="UNAVAILABLE">
@@ -156,22 +154,17 @@
                                     <TableColumn fx:id="price" prefWidth="147.666748046875" text="Thành tiền" />
                                  </columns>
                               </TableView>
-                              <Button fx:id="order_add_btn" layoutX="8.0" layoutY="770.0" mnemonicParsing="false" onAction="#add_mon" onMouseClicked="#add_click" prefHeight="65.0" prefWidth="221.0" text="Thêm món">
+                              <Button fx:id="order_add_btn" layoutX="8.0" layoutY="770.0" mnemonicParsing="false" onMouseClicked="#add_click" prefHeight="65.0" prefWidth="221.0" text="Thêm món">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="order_noti_btn" layoutX="290.0" layoutY="770.0" mnemonicParsing="false" onAction="#bao_bep" onMouseClicked="#noti_click" prefHeight="65.0" prefWidth="221.0" text="Báo bếp">
+                              <Button fx:id="order_noti_btn" layoutX="290.0" layoutY="770.0" mnemonicParsing="false" onMouseClicked="#noti_click" prefHeight="65.0" prefWidth="221.0" text="Báo bếp">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="order_cancel_btn" layoutX="8.0" layoutY="890.0" mnemonicParsing="false" onAction="#order_cancel" onMouseClicked="#cancel_click" prefHeight="65.0" prefWidth="221.0" text="Hủy bàn">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="order_pay_btn" layoutX="295.0" layoutY="890.0" mnemonicParsing="false" onAction="#order_pay" onMouseClicked="#pay_click" prefHeight="65.0" prefWidth="221.0" text="Thanh toán">
+                              <Button fx:id="order_pay_btn" layoutX="8.0" layoutY="892.0" mnemonicParsing="false" onMouseClicked="#pay_click" prefHeight="65.0" prefWidth="221.0" text="Thanh toán">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
@@ -181,7 +174,7 @@
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="order_sum" layoutX="675.0" layoutY="780.0" text="1000000">
+                              <Label fx:id="order_sum" layoutX="675.0" layoutY="780.0" text="">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
@@ -203,149 +196,72 @@
                      <children>
                         <TableView fx:id="tbl_menu" layoutX="77.0" layoutY="95.0" prefHeight="855.0" prefWidth="1605.0">
                            <columns>
-                              <TableColumn prefWidth="200.33334350585938" text="Mã món" />
-                              <TableColumn minWidth="0.0" prefWidth="869.6666564941406" text="Tên món" />
-                              <TableColumn prefWidth="221.0" text="Mã loại" />
-                              <TableColumn prefWidth="200.66665649414062" text="Đơn giá" />
-                              <TableColumn prefWidth="113.3333740234375" text="Đơn vị" />
+                              <TableColumn fx:id="ma_mon_col" prefWidth="200.33334350585938" text="Mã món" />
+                              <TableColumn fx:id="ten_mon_col" minWidth="0.0" prefWidth="869.6666564941406" text="Tên món" />
+                              <TableColumn fx:id="ma_loai_col" prefWidth="221.0" text="Mã loại" />
+                              <TableColumn fx:id="don_gia_col" prefWidth="200.66665649414062" text="Đơn giá" />
+                              <TableColumn fx:id="dv_col" prefWidth="113.3333740234375" text="Đơn vị" />
                            </columns>
                         </TableView>
                         <Label layoutX="82.0" layoutY="44.0" text="Nhóm món :">
                            <font>
                               <Font size="18.0" />
                            </font></Label>
-                        <ComboBox fx:id="box_nhommon" layoutX="202.0" layoutY="45.0" prefWidth="150.0" promptText="Tất cả các món" />
-                        <Label layoutX="1312.0" layoutY="57.0" text="Tìm món">
+                        <ComboBox fx:id="box_nhommon" layoutX="202.0" layoutY="45.0" onAction="#boxChange" prefWidth="150.0" promptText="Tất cả các món" />
+                        <Label layoutX="1272.0" layoutY="57.0" text="Tìm món">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tim_mon_fidle" layoutX="1400.0" layoutY="54.0" prefHeight="25.0" prefWidth="282.0">
+                        <TextField fx:id="tim_mon_fidle" layoutX="1356.0" layoutY="54.0" onKeyPressed="#find_mon" prefHeight="25.0" prefWidth="282.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
+                        <ImageView fx:id="find_img" fitHeight="37.0" fitWidth="31.0" layoutX="1645.0" layoutY="61.0" onMouseClicked="#find_mon" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/find-icon.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content>
             </Tab>
             <Tab fx:id="quan_ly_btn" text="   Quản lý   ">
                <content>
-                  <AnchorPane fx:id="quan_ly" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane fx:id="quan_ly" minHeight="0.0" minWidth="0.0" prefHeight="1027.0" prefWidth="1894.0">
                      <children>
-                        <Button fx:id="nv_infor_btn" layoutX="23.0" layoutY="50.0" mnemonicParsing="false" onAction="#nhanvien" onMouseClicked="#nv_infor_click" text="Thông tin nhân viên">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="ql_ban_btn" layoutX="23.0" layoutY="350.0" mnemonicParsing="false" onAction="#ql_ban" onMouseClicked="#ql_ban_click" prefHeight="39.0" prefWidth="176.0" text="Quản lý bàn">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="ql_menu_btn" layoutX="23.0" layoutY="200.0" mnemonicParsing="false" onAction="#ql_menu" onMouseClicked="#ql_menu_click" prefHeight="39.0" prefWidth="176.0" text="Quản lý menu">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="ql_nv_btn" layoutX="23.0" layoutY="500.0" mnemonicParsing="false" onAction="#ql_nv" onMouseClicked="#ql_nv_click" prefHeight="39.0" prefWidth="176.0" text="Quản lý nhân viên">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="add_bth" layoutX="1700.0" layoutY="150.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="160.0" text="Thêm">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="delete_btn" layoutX="1700.0" layoutY="300.0" mnemonicParsing="false" onAction="#delete" prefHeight="39.0" prefWidth="160.0" text="Xóa">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="sua_btn" layoutX="1700.0" layoutY="450.0" mnemonicParsing="false" onAction="#sua" prefHeight="39.0" prefWidth="160.0" text="Sửa">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <AnchorPane layoutX="223.0" layoutY="52.0" prefHeight="905.0" prefWidth="1429.0">
-                           <children>
-                              <Pane prefHeight="905.0" prefWidth="1429.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <BorderPane prefHeight="1030.0" prefWidth="1901.0">
+                           <left>
+                              <Pane prefHeight="347.0" prefWidth="215.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label layoutX="80.0" layoutY="50.0" text="Họ và tên">
+                                    <Button fx:id="nv_infor_btn" layoutX="-1.0" layoutY="136.0" mnemonicParsing="false" onMouseClicked="#nv_infor_click" prefHeight="39.0" prefWidth="214.0" text="Thông tin nhân viên">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
-                                    </Label>
-                                    <Label layoutX="80.0" layoutY="150.0" text="CCCD">
+                                    </Button>
+                                    <Button fx:id="ql_ban_btn" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#ql_ban_click" prefHeight="39.0" prefWidth="214.0" text="Quản lý bàn">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
-                                    </Label>
-                                    <Label layoutX="80.0" layoutY="250.0" text="Tuổi">
+                                    </Button>
+                                    <Button fx:id="ql_menu_btn" layoutX="2.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#ql_menu_click" prefHeight="39.0" prefWidth="214.0" text="Quản lý menu">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
-                                    </Label>
-                                    <Label layoutX="80.0" layoutY="350.0" text="Giới tính">
+                                    </Button>
+                                    <Button fx:id="ql_nv_btn" layoutX="2.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#ql_nv_click" prefHeight="39.0" prefWidth="212.0" text="Quản lý nhân viên">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
-                                    </Label>
-                                    <Label layoutX="80.0" layoutY="450.0" text="SĐT">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="80.0" layoutY="550.0" text="Mail">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="80.0" layoutY="650.0" text="Địa chỉ">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="280.0" layoutY="50.0" text="Nguyễn Duy Phương">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="280.0" layoutY="150.0" text="038201003000">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="280.0" layoutY="250.0" text="21">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="280.0" layoutY="350.0" text="Nam">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="280.0" layoutY="450.0" text="0817223626">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="280.0" layoutY="550.0" text="PhuongDZ@gmail.com">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="280.0" layoutY="650.0" text="Royal City">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
+                                    </Button>
                                  </children>
                               </Pane>
-                           </children>
-                        </AnchorPane>
+                           </left>
+                           <center>
+                              <StackPane fx:id="content" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
                      </children>
                   </AnchorPane>
                </content>

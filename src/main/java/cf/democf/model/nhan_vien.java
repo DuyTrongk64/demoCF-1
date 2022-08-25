@@ -130,4 +130,17 @@ public class nhan_vien {
     public void setPhan_quyen(boolean phan_quyen) {
         this.phan_quyen = phan_quyen;
     }
+
+    public nhan_vien() {
+    }
+
+    public nhan_vien(String nv_name, String cccd, int age, boolean gender, String phone_num, String mail, String address) {
+        this.nv_name = nv_name;
+        this.cccd = cccd;
+        this.age = age;
+        this.gender = gender;
+        this.phone_num = phone_num;
+        this.mail = mail;
+        this.address = address;
+    }
 }

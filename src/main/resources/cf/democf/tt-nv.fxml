@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1030.0" prefWidth="1686.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cf.democf.controller.tt_nv_controller">
+    <children>
+        <Label layoutX="80.0" layoutY="50.0" text="Họ và tên">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="150.0" text="CCCD">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="250.0" text="Tuổi">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="350.0" text="Giới tính">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="450.0" text="SĐT">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="550.0" text="Mail">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="650.0" text="Địa chỉ">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="ten" layoutX="280.0" layoutY="50.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="cccd" layoutX="280.0" layoutY="150.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="age" layoutX="280.0" layoutY="250.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="gt" layoutX="280.0" layoutY="350.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="sdt" layoutX="280.0" layoutY="450.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="mail" layoutX="280.0" layoutY="550.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="adr" layoutX="280.0" layoutY="650.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

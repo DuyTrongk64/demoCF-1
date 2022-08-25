@@ -20,8 +20,8 @@ public class phanloai {
         this.ten_loai = ten_loai;
     }
 
-    public phanloai(String ma_loai) {
-        this.ma_loai = ma_loai;
+    public phanloai(String ten_loai) {
+        this.ten_loai = ten_loai;
     }
 
     public phanloai(String ma_loai, String ten_loai) {
