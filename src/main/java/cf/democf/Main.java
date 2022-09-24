@@ -73,6 +73,13 @@ public class Main extends Application {
         return root;
     }
 
+    public  void sendNv_id(String fxml,Node node,String data) throws IOException{
+        stg = (Stage) node.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+        stg.setUserData(data);
+        stg.getScene().setRoot(root);
+        stg.sizeToScene();
+    }
     public static void main(String[] args) {
         launch();
     }

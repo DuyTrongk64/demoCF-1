@@ -103,7 +103,7 @@ public class nv_db_cnt {
     }
 
     // chinh sua thong tin
-    public static void update(nhan_vien nhan_vien) {
+    public static void update(String old_nv_id,nhan_vien nhan_vien) {
 
         String url = "jdbc:postgresql://localhost:5432/demoCF";
 
@@ -115,7 +115,7 @@ public class nv_db_cnt {
         PreparedStatement statement = null;
         try {
             conn = DriverManager.getConnection(url, user, password);
-            String sql = "update nhanvien set nv_id=?,nv_name=?,cccd=?,age=?,gender=?,phone_num=?,mail=?,address=?,user_name=?,pass_word=?,phan_quyen=?";
+            String sql = "update nhanvien set nv_id=?,nv_name=?,cccd=?,age=?,gender=?,phone_num=?,mail=?,address=?,user_name=?,pass_word=?,phan_quyen=? where nv_id like ?";
             statement = conn.prepareCall(sql);
             statement.setString(1, nhan_vien.getNv_id());
             statement.setString(2, nhan_vien.getNv_name());
@@ -128,6 +128,7 @@ public class nv_db_cnt {
             statement.setString(9, nhan_vien.getUser_name());
             statement.setString(10, nhan_vien.getPass_word());
             statement.setBoolean(11,nhan_vien.isPhan_quyen());
+            statement.setString(12,old_nv_id);
             statement.execute();
 
         } catch (SQLException ex) {
@@ -137,7 +138,7 @@ public class nv_db_cnt {
     }
 
     //xoa nv
-    public static void delete(String input) {
+    public static void delete(String nv_id) {
         String url = "jdbc:postgresql://localhost:5432/demoCF";
 
         String user = "postgres";
@@ -148,9 +149,9 @@ public class nv_db_cnt {
         PreparedStatement statement = null;
         try {
             conn = DriverManager.getConnection(url, user, password);
-            String sql = "delete from nhanvien where nv_id=?";
+            String sql = "delete from nhanvien where nv_id like ?";
             statement = conn.prepareCall(sql);
-            statement.setString(1, "%"+input+"%");
+            statement.setString(1, "%"+nv_id+"%");
             statement.execute();
 
         } catch (SQLException ex) {
@@ -258,6 +259,54 @@ public class nv_db_cnt {
         return chk;
     }
 
+    public static nhan_vien getNv_Inf(String user_name) {
+
+        nhan_vien nv = new nhan_vien();
+
+        String url = "jdbc:postgresql://localhost:5432/demoCF";
+
+        String user = "postgres";
+
+        String password = "12345";
+        Connection conn = null;
+        PreparedStatement statement = null;
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            String sql = "select nv_name,cccd,age,gender,phone_num,mail,address from nhanvien where user_name like ? ";
+            statement = conn.prepareCall(sql);
+            statement.setString(1, "%"+user_name+"%");
+
+            ResultSet resultset = statement.executeQuery();
+            if(resultset.next()){
+                nv = new nhan_vien(
+                        resultset.getString("nv_name"),resultset.getString("cccd"),resultset.getInt("age"),
+                        resultset.getBoolean("gender"),resultset.getString("phone_num"),
+                        resultset.getString("mail"),resultset.getString("address")
+                );
+            }
+            else nv=null;
+        } catch (SQLException ex) {
+            Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if (conn != null) {
+                    try {
+                        conn.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+
+                    }
+
+                }
+            }
+        }
+        return nv;
+    }
     // ds phan loai
     public static ObservableList<String> plList(){
         ObservableList<String> pl =FXCollections.observableArrayList();
@@ -397,6 +446,54 @@ public class nv_db_cnt {
          return banList;
      }
 
+    // show mon
+    public static ObservableList<menu> show_mon(){
+        ObservableList<menu>  menuList = FXCollections.observableArrayList();
+
+        String url = "jdbc:postgresql://localhost:5432/demoCF";
+
+        String user = "postgres";
+
+        String password = "12345";
+        Connection conn = null;
+        PreparedStatement statement = null;
+
+        try {
+            menuList.clear();
+            conn = DriverManager.getConnection(url, user, password);
+            String sql = "select ten_mon,price,dv from menu" ;
+            statement = conn.prepareCall(sql);
+            //statement.setString(1, "%"+ma_ban+"%");
+            ResultSet resultset = statement.executeQuery();
+            while (resultset.next()) {
+                menuList.add(new menu( resultset.getString("ten_mon")
+                        ,resultset.getInt("price"),resultset.getString("dv"))
+                ) ;
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if (conn != null) {
+                    try {
+                        conn.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+
+                    }
+
+                }
+            }
+        }
+
+        return menuList;
+    }
      // find mon
      public static ObservableList<menu> find_mon(String ten_mon){
          ObservableList<menu>  menuList = FXCollections.observableArrayList();
@@ -412,12 +509,12 @@ public class nv_db_cnt {
          try {
              menuList.clear();
              conn = DriverManager.getConnection(url, user, password);
-             String sql = "select ten_mon,price,dv from menu where ten_mon like '%" + ten_mon + "%'" ;
+             String sql = "select ma_mon,ten_mon,price,dv from menu where ten_mon like '%" + ten_mon + "%'" ;
              statement = conn.prepareCall(sql);
              //statement.setString(1, "%"+ma_ban+"%");
              ResultSet resultset = statement.executeQuery();
              while (resultset.next()) {
-                 menuList.add(new menu( resultset.getString("ten_mon")
+                 menuList.add(new menu(resultset.getString("ma_mon"), resultset.getString("ten_mon")
                          ,resultset.getInt("price"),resultset.getString("dv"))
                  ) ;
 
@@ -468,6 +565,7 @@ public class nv_db_cnt {
         } catch (SQLException ex) {
             Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     //trich ma hoa don
@@ -484,7 +582,7 @@ public class nv_db_cnt {
         try {
 
             conn = DriverManager.getConnection(url, user, password);
-            String sql = "select receipt_id from recieipt where tbl_id = ? and trang_thai=true";
+            String sql = "select receipt_id from receipt where tbl_id like ? and trang_thai='true'";
             statement = conn.prepareCall(sql);
             statement.setString(1, "%"+tbl_id+"%");
             ResultSet resultset = statement.executeQuery();
@@ -493,6 +591,22 @@ public class nv_db_cnt {
             }
         } catch (SQLException ex) {
             Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (mhd =="1"){
+            mhd=RandomString.getAlphaNumericString();
+            try {
+                conn = DriverManager.getConnection(url, user, password);
+                String sql = "insert into receipt (receipt_id, tbl_id, datetime) values (?,?,'now')";
+                statement = conn.prepareCall(sql);
+                statement.setString(1, "%"+mhd+"%");
+                statement.setString(2, "%"+tbl_id+"%");
+                ResultSet resultset = statement.executeQuery();
+                while (resultset.next()) {
+                    mhd=resultset.getString("receipt_id") ;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(nv_db_cnt.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return mhd;
     }

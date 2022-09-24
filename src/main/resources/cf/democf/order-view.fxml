@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="565.0" prefWidth="1034.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cf.democf.controller.oder_view_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="565.0" prefWidth="1034.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cf.democf.controller.oder_view_controller">
    <children>
       <Pane prefHeight="523.0" prefWidth="439.0">
          <children>
@@ -59,9 +59,10 @@
       </Pane>
       <TableView fx:id="order_list" layoutX="461.0" layoutY="55.0" prefHeight="464.0" prefWidth="543.0">
         <columns>
-          <TableColumn fx:id="ten_mon_col" prefWidth="359.0" text="Tên món" />
-          <TableColumn fx:id="gia_col" prefWidth="103.0" text="Giá" />
-            <TableColumn fx:id="dv_col" text="Đơn vị" />
+            <TableColumn fx:id="ma_mon" prefWidth="99.0" text="Mã món" />
+          <TableColumn fx:id="ten_mon_col" prefWidth="281.0" text="Tên món" />
+          <TableColumn fx:id="gia_col" prefWidth="67.0" text="Giá" />
+            <TableColumn fx:id="dv_col" prefWidth="95.0" text="Đơn vị" />
         </columns>
       </TableView>
    </children>

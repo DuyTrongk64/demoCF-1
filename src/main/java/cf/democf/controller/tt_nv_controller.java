@@ -16,14 +16,18 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static cf.democf.db_connect.nv_db_cnt.getNv_Inf;
+
 public class tt_nv_controller implements Initializable {
     /**
      * Initializes the controller class.
      */
+    String user_name;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        shownv();
+        reload();
     }
+
 
 
     @FXML
@@ -42,21 +46,35 @@ public class tt_nv_controller implements Initializable {
     private Label mail;
 
     @FXML
+    private Button rl_btn;
+
+    @FXML
     private Label sdt;
 
     @FXML
     private Label ten;
 
-    private void shownv(){
-
-        ten.setText("Nguyen Duy Trong");
-        cccd.setText("0215991678");
-        age.setText("21");
-        gt.setText("Nam");
-        sdt.setText("0817226323");
-        mail.setText("abcd01@gmail.com");
-        adr.setText("ba dinh");
+    @FXML
+    void reload_act(MouseEvent event) {
+        //receiveData
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        user_name = (String) stage.getUserData();
+        nhan_vien nv = getNv_Inf(user_name);
+        ten.setText(nv.getNv_name());
+        cccd.setText(nv.getCccd());
+        age.setText(Integer.toString(nv.getAge()));
+        sdt.setText(nv.getPhone_num());
+        mail.setText(nv.getMail());
+        if(nv.isGender()==true){
+            gt.setText("Nam");
+        }
+        else gt.setText("Nũ");
+        adr.setText(nv.getAddress());
     }
 
+    private void reload(){
+        rl_btn.fire();
+    }
 
 }

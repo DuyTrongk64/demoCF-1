@@ -5,6 +5,7 @@ import cf.democf.db_connect.nv_db_cnt;
 import cf.democf.model.menu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -13,22 +14,21 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class oder_view_controller {
-    private String ma_ban;
+public class oder_view_controller implements Initializable {
+    public String ma_ban;
+    public int amt;
+    public String mamon;
 
-    public String getMa_ban() {
-        return ma_ban;
+    public void initialize(URL url, ResourceBundle rb){
+        order_list.getItems().clear();
+        order_list.setItems(nv_db_cnt.find_mon(order_field.getText()));
+        ten_mon_col.setCellValueFactory(new PropertyValueFactory<>("ten_mon"));
+        gia_col.setCellValueFactory(new PropertyValueFactory<>("price"));
+        dv_col.setCellValueFactory(new PropertyValueFactory<>("dv"));
     }
-
-    public void setMa_ban(String ma_ban) {
-        this.ma_ban = ma_ban;
-    }
-
-    private int amt;
-
-    private String ma_mon;
-
     @FXML
     private TextField amount_field;
 
@@ -43,6 +43,9 @@ public class oder_view_controller {
 
     @FXML
     private TableColumn<?, ?> gia_col;
+
+    @FXML
+    private TableColumn<?, ?> ma_mon;
 
     @FXML
     private TextField order_field;
@@ -75,7 +78,8 @@ public class oder_view_controller {
     @FXML
     void chon(MouseEvent event) {
         menu selected = order_list.getSelectionModel().getSelectedItem();
-        ma_mon=selected.getMa_mon();
+        mamon=selected.getMa_mon();
+        //System.out.print(mamon);
     }
     @FXML
     void xac_nhan_order(MouseEvent event) throws IOException {
@@ -83,12 +87,18 @@ public class oder_view_controller {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         String tbl_id = (String) stage.getUserData();
+        //System.out.print(tbl_id);
         //add
+        amt=Integer.parseInt(amount_field.getText());
+
         String mhd = nv_db_cnt.mhd(tbl_id);
-        nv_db_cnt.addOrder(mhd,ma_mon,amt);
+        nv_db_cnt.addOrder(mhd,mamon,amt);
         //back to main
         Main m =new Main();
         m.switchScene("nv-main-view.fxml");
+        System.out.print(mhd);
+        System.out.print(mamon);
+        System.out.print(amt);
 
     }
 

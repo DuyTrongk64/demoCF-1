@@ -95,7 +95,7 @@ public class sua_nv_controller {
         if(admin.isSelected()) phan_quyen = true;
         else phan_quyen = false;
         nhan_vien nv =new nhan_vien(id.getText(),name.getText(),cccd.getText(),tuoi,gender,sdt.getText(),mail.getText(),dc.getText(),usn.getText(),pass.getText(),phan_quyen);
-        nv_db_cnt.insert(nv);
+        nv_db_cnt.update(nv.getNv_id(),nv);
         Main m = new Main();
         m.switchScene("nv-main-view.fxml");
     }

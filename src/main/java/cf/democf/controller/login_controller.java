@@ -43,7 +43,9 @@ public class login_controller {
         Main m = new Main();
         boolean chk= nv_db_cnt.findUser(user_field.getText(),pass_field.getText());
         if(chk){
-            m.switchSC("nv-main-view.fxml",node,user_field.getText());
+            //m.switchSC("nv-main-view.fxml",node,user_field.getText());
+            //send data
+            m.sendNv_id("nv-main-view.fxml",node,user_field.getText());
         }
         else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

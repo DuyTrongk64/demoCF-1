@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4e77241-ddd5-4d3b-b607-c39f8713088e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/add_menu_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/add_nv_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/oder_view_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/ql_ban_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/ql_menu_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/ql_nv_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/sua_nv_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/tt_nv_controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/model/ban.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/add-menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/add-nv.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/order-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/ql-ban.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/ql-menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/ql-nv.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/sua-nv.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/tt-nv.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cf/democf/model/RandomString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/80995ede-435c-4ccb-89ee-4d1c6f5d3fed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/80995ede-435c-4ccb-89ee-4d1c6f5d3fed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/80995ede-435c-4ccb-89ee-4d1c6f5d3fed/storage_v2/_src_/database/demoCF.hhlnsA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/80995ede-435c-4ccb-89ee-4d1c6f5d3fed/storage_v2/_src_/database/demoCF.hhlnsA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/80995ede-435c-4ccb-89ee-4d1c6f5d3fed/storage_v2/_src_/database/demoCF.hhlnsA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/80995ede-435c-4ccb-89ee-4d1c6f5d3fed/storage_v2/_src_/database/demoCF.hhlnsA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
@@ -30,62 +15,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/controller/login_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/login_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/controller/nv_main_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/nv_main_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/controller/oder_view_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/oder_view_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/controller/sua_nv_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/sua_nv_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/controller/tt_nv_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/controller/tt_nv_controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/db_connect/nv_db_cnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/db_connect/nv_db_cnt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/model/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/model/menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/model/model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/model/nhan_vien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/model/nhan_vien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cf/democf/model/phanloai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cf/democf/model/phanloai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/248238336_4950306775076175_1415478385846237118_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/249274482_852756492053680_7595924193946927800_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/249859377_1083579809064244_4492365995676714543_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/250195833_555415508884975_6876945072361066483_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/260959594_1330921787378354_4354375269653444459_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/261402893_852737112065990_6242916508893775482_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/261501892_234819938635169_2822370936287351071_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/261664696_1256231801547835_6372570355527893570_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/261693784_602986164127123_763967768202644127_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/261746689_458316382396068_7376644525027404312_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/261784185_4520107788074224_6046441252493392934_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/262163231_591116005508584_5491513726308396555_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/262799299_459256719191184_1666067622583555414_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/262903220_4209343552503931_3295822939718811668_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/262924091_485688496168621_4377609729569495947_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/263052933_462627028778384_3881534746013374594_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/263323492_950711669162934_5703968588107414361_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/263488259_396331415577383_741822796044278306_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/263774036_919363102303641_2090826337379461262_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/263796963_591688455445588_7137043343404597003_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/264093340_965071944389905_8944921342804698599_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/264901974_3347777165455571_2657747566604756861_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/265225780_345653380230122_8051540534361141211_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/265526972_492646538722729_7233710349791345558_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/266377601_960445268186727_6478252915489457921_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/266559828_657124655426069_6116356630898566381_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/270776607_748173969919061_596800702883849362_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/271204904_748172483252543_1187654721532200518_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/271383596_708975783820728_2915393421865378841_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/271588624_748176599918798_8382322858169112486_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/272550439_926080394740816_1201452598097299596_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/273013430_487216969582161_3581966974352400647_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/273033895_520371299396837_323531337409921803_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/273173372_5080747931982096_3856690774470181498_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/273195910_517008196400734_3773340139336904541_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/274509756_1625905281078499_5216543167368764363_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/274615768_296195512581948_1015581181585634313_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/275828082_634582617640171_2854290118811265140_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/275961797_543955120326979_3334655098266022756_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/276029431_366691708700172_5475988345032946114_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/276080380_2749062008735158_5382681431742495336_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/276326730_395822615300535_4957198528121759209_n (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/277446037_1159394411473935_2731167518031216632_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/290145444_609863750302987_9215904954407589116_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/2993126585725.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/video-1645680804.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/z2993126507726_c355f4c3f11f03919aa69bcb946a4f4b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/z3014214011362_e73f24d357df05f481c8399ed3de191f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/image/hoai ngu/z3014214019366_94bc7793bd525cc0120566728556fac4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/nv-main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/nv-main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/order-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/order-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cf/democf/tt-nv.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cf/democf/tt-nv.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,27 +59,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Admin/Documents/GitHub/demoCF-1/src/main/resources/cf/democf",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "service.view.auto.scroll.to.source": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Documents/GitHub/demoCF-1&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\GitHub\demoCF-1\src\main\resources\cf\democf" />
@@ -201,7 +137,12 @@
       <workItem from="1661133750246" duration="18344000" />
       <workItem from="1661178083946" duration="2653000" />
       <workItem from="1661234398900" duration="37522000" />
-      <workItem from="1661410374717" duration="25116000" />
+      <workItem from="1661410374717" duration="27168000" />
+      <workItem from="1661671803644" duration="27000" />
+      <workItem from="1663446137868" duration="1614000" />
+      <workItem from="1663462645577" duration="94000" />
+      <workItem from="1663462923593" duration="292000" />
+      <workItem from="1663960284685" duration="14918000" />
     </task>
     <servers />
   </component>

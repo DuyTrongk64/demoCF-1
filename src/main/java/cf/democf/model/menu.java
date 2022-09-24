@@ -82,4 +82,11 @@ public class menu {
         this.price = price;
         this.dv = dv;
     }
+
+    public menu(String ma_mon, String ten_mon, int price, String dv) {
+        this.ma_mon = ma_mon;
+        this.ten_mon = ten_mon;
+        this.price = price;
+        this.dv = dv;
+    }
 }
